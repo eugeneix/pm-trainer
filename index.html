@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тренажёр продакт-менеджера</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="gate" class="gate"><form id="loginForm"><h2>Тренажёр продакт-менеджера</h2><p id="gateMsg">Вход только для владельца</p><input id="lgEmail" type="email" placeholder="E-mail" autocomplete="username" required><input id="lgPass" type="password" placeholder="Пароль" autocomplete="current-password" required><button class="btn" type="submit">Войти</button></form></div>
+<div class="app" id="appRoot" hidden>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#/home">
+      <span class="brand-logo">PM</span>
+      <span><b>Продакт-менеджер</b><small>тренажёр курса</small></span>
+    </a>
+    <div class="side-progress">
+      <div class="bar"><i id="sideBar"></i></div>
+      <span id="sideText"></span>
+    </div>
+    <nav class="tree" id="tree"></nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn only-mobile" id="menuBtn" title="Меню">☰</button>
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Поиск по курсу…" autocomplete="off">
+      </div>
+      <div class="top-actions">
+        <a class="chip" href="#/review">🎯<span class="lbl"> Повторение</span></a>
+        <a class="chip" href="#/mistakes">🧩<span class="lbl"> Ошибки</span></a>
+        <a class="chip" href="#/notes">📝<span class="lbl"> Конспект</span></a>
+        <a class="chip" href="#/test">🎓<span class="lbl"> Тест</span></a>
+        <label class="mode-switch" title="Быстрый режим: весь урок сразу, задания не блокируют, все уроки открыты">
+          <input type="checkbox" id="fastMode">
+          <span class="track"><span class="thumb"></span></span>
+          <span class="mode-label">⚡ Быстрый режим</span>
+        </label>
+        <button class="icon-btn" id="themeBtn" title="Тема">◐</button>
+        <span id="syncState" class="chip" title="Синхронизация">☁</span>
+        <button class="icon-btn" id="logoutBtn" title="Выйти">⎋</button>
+      </div>
+    </header>
+    <main id="view" class="view" tabindex="-1"></main>
+  </div>
+</div>
+<div class="lightbox" id="lightbox" hidden><img alt=""></div>
+<div class="toast" id="toast" hidden></div>
+<script src="boot.js"></script>
+</body>
+</html>
